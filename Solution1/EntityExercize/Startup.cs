@@ -25,7 +25,7 @@ namespace EntityExercize
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionstring = Configuration.GetConnectionString("EfCoreDb");
-            services.AddDbContext<ShopContext>(z => z.UseSqlServer("connectionstring"));
+            services.AddDbContext<ShopContext>(z => z.UseSqlServer(connectionstring));
             services.AddControllersWithViews();
         }
 

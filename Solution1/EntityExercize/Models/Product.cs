@@ -11,10 +11,10 @@ namespace EntityExercize.Models
         public string Name { get; set; }
         public double UnitPrice { get; set; }
         public DateTime CreationDate { get; set; }
-        public Product(string name,double unitprice)
+        public Product(string name,double unit)
         {
             Name = name;
-            UnitPrice = unitprice;
+            UnitPrice = unit;
             CreationDate = DateTime.Now;
         }
     }

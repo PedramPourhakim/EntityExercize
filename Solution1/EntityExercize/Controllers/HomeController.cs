@@ -19,8 +19,8 @@ namespace EntityExercize.Controllers
         }
         public IActionResult Index()
         {
-            var product = new Product("Iphone11",399);
-            _context.Products.Add(product);
+            var product = new Product("Iphone11",999);
+            _context.Add(product);
             _context.SaveChanges();
             return View();
         }
