@@ -11,15 +11,17 @@ namespace EntityExercize.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ShopContext _context;
+        public HomeController(ShopContext context)
         {
-            _logger = logger;
-        }
+            _context = context;
 
+        }
         public IActionResult Index()
         {
+            var product = new Product("Iphone11",399);
+            _context.Products.Add(product);
+            _context.SaveChanges();
             return View();
         }
 
