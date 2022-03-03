@@ -24,8 +24,8 @@ namespace EntityExercize
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionstring = Configuration.GetConnectionString("EfCoreDb");
-            services.AddDbContext<ShopContext>(z => z.UseSqlServer(connectionstring));
+            var connectionString = Configuration.GetConnectionString("Ef");
+            services.AddDbContext<ShopContext>(x=>x.UseSqlServer(connectionString));
             services.AddControllersWithViews();
         }
 

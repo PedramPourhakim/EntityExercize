@@ -7,15 +7,25 @@ namespace EntityExercize.Models
 {
     public class Product
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public double UnitPrice { get; set; }
-        public DateTime CreationDate { get; set; }
-        public Product(string name,double unit)
+        public double Price { get; set; }
+        public bool IsInStock { get; set; }
+        public int DisCountRate { get; set; }
+        public DateTime ModifiedDate { get; set; }
+        public Product(string name,double price)
         {
             Name = name;
-            UnitPrice = unit;
-            CreationDate = DateTime.Now;
+            Price = price;
+            ModifiedDate = DateTime.Now;
+        }
+        public void SetDiscountRate(int rate)
+        {
+            DisCountRate = rate;
+        }
+        public void IsAvailable()
+        {
+            IsInStock = true;
         }
     }
 }
