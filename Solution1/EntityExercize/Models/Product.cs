@@ -12,6 +12,7 @@ namespace EntityExercize.Models
         public double Price { get; set; }
         public bool IsInStock { get; set; }
         public int DisCountRate { get; set; }
+        public bool IsRemoved { get; set; }
         public DateTime ModifiedDate { get; set; }
         public Product(string name,double price)
         {

@@ -1,4 +1,5 @@
-﻿using EntityExercize.Models;
+﻿using EntityExercize.Mapping;
+using EntityExercize.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace EntityExercize
         public ShopContext(DbContextOptions<ShopContext> options) :base(options)
         {
 
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ProductMapping());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

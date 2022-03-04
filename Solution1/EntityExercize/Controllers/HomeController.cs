@@ -35,7 +35,26 @@ namespace EntityExercize.Controllers
             //var product = _context.Products.FirstOrDefault(x => x.Name == "Ipad");
             //var products = _context.Products.Where(x=>x.Price<1000).ToList();
             //var products = _context.Products.Where(x => x.Price > 500).Where(x => x.IsInStock).ToList();
-            return View(new List<Product>());
+            //var exists = _context.Products.Any(x => x.Name == "Ipad" && x.IsInStock);
+            //var all = _context.Products.All(x => x.Name == "Ipad" && x.IsInStock);
+            //var product = _context.Products.FirstOrDefault(product => product.Id == 4);
+            //if(product!= null)
+            //{
+            //    product.Price = 1000;
+            //    product.DisCountRate = 7;
+            //    _context.SaveChanges();
+            //}
+            //var products = _context.Products.ToList();
+            //products.ForEach(product => product.IsInStock = true);
+            //_context.SaveChanges();
+            //var ProductsToDelete = _context.Products.Where(x => x.Name == "Iphone11").ToList();
+            //foreach(var product in ProductsToDelete)
+            //{
+            //    product.IsRemoved = true;
+            //    _context.SaveChanges();
+            //}
+            var products = _context.Products.Where(x => x.IsRemoved == false).ToList();
+            return View(products);
         }
 
         public IActionResult Privacy()
